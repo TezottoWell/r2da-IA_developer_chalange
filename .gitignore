@@ -8,3 +8,11 @@ wheels/
 
 # Virtual environments
 .venv
+
+# IDE files
+.vscode/
+.idea/
+
+# Data files
+pdfs/
+saida/

@@ -23,23 +23,33 @@ def medir_ruido(image_gray: np.ndarray) -> float:
 def calcular_score(nitidez: float, contraste: float, ruido: float) ->  int:
     score = 0
 
-    if nitidez >= 100:
-         score += 40
+    if nitidez >= 300:
+        score += 60
+    elif nitidez >= 150:
+        score += 25
     elif nitidez >= 50:
-         score += 20
+        score += 10
+    else:
+        score -= 10
+
     if contraste >= 50:
-         score += 40
+        score += 30
     elif contraste >= 20:
-         score += 20
-    if ruido <= 10:
-         score += 20
+        score += 15
+    else:
+        score -= 10
+
+    if ruido <= 8:
+        score += 40
     elif ruido <= 20:
-         score += 10
+        score += 15
+    else:
+        score -= 10
 
     return score
 
 def decidir(score: int) -> str:
-    if score >= 70:
+    if score >= 60:
         return "SEND_TO_AI"
     elif score >= 40:
         return "REVIEW_MANUALLY"
