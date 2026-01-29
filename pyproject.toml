@@ -1,7 +1,7 @@
 [project]
-name = "r2da"
+name = "desafio r2da I.A developer- Wellington Tezotto."
 version = "0.1.0"
-description = "Add your description here"
+description = "Script para avaliação de PDFS com imagens, decidindo o Score com base na nitidez, contraste e ruido, utilizando visão computacional com OpenCv."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
